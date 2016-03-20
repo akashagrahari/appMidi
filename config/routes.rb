@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
+  get 'home/watch'
+  get 'home/learn'
+  get 'home/play'
+  get 'home/contribute'
+  get 'home/about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -56,6 +59,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root "home#index"
+  root "home#watch"
   match ':controller(/:action(/:id(.:format)))', :via => :get
 end

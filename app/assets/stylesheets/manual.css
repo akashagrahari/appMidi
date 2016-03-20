@@ -1,0 +1,26 @@
+.play-controls{
+    float:left;
+}
+
+
+.file-controls{
+    float: right;
+    /*margin-left: 2%;*/
+    /*margin-right: 2%;*/
+}
+
+.div-bpm{
+    width:40%;
+    float: right;
+    margin-right: 11%;
+    /*margin-right: 2%;*/
+}
+
+.upload-file{
+    float:right;
+    margin-right:5%;
+}
+
+input[type=file] {
+    display: none;
+}

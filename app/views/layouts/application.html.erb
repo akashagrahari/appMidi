@@ -8,46 +8,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<script>
-//  window.fbAsyncInit = function() {
-//    FB.init({
-//      appId      : '1677114712542702',
-//      xfbml      : true,
-//      version    : 'v2.5'
-//    });
-//  };
-//
-//  (function(d, s, id){
-//    var js, fjs = d.getElementsByTagName(s)[0];
-//    if (d.getElementById(id)) {return;}
-//    js = d.createElement(s); js.id = id;
-//    js.src = "//connect.facebook.net/en_US/sdk.js";
-//    fjs.parentNode.insertBefore(js, fjs);
-//  }(document, 'script', 'facebook-jssdk'));
-</script>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-header">
-    <a class="navbar-brand" href="/home/watch">MIDI Play</a>
+    <a class="navbar-brand" href="/access/index">MIDI Play</a>
+    <% unless session[:user_id].blank? %>
     <a class="navbar-brand" href="" id="menu-toggle">| | |</a>
+    <% end %>
   </div>
   <div id="navbar" class="navbar-collapse collapse">
     <form class="navbar-form navbar-right">
+      <% if pagesWithPlay.include?(@page_title) %>
       <div class="form-group">
-        <% if pagesWithPlay.include?(@page_title) %>
             <select class="form-control" id="sel1">
               <option>Acoustic Piano 61-key</option>
+              <option disabled>More instruments adding soon</option>
             </select>
-            <%= link_to 'Logout', :controller => 'access', :action => 'logout' %>
-            &nbsp;&nbsp;
-        <% end %>
       </div>
+      <% end %>
+      <% unless session[:user_id].blank? %>
+          &nbsp;
+          <%= link_to 'Logout', :controller => 'access', :action => 'logout' %>
+          &nbsp;&nbsp;
+      <% end %>
     </form>
   </div>
 </nav>
 <div id="wrapper" class="toggled">
+  <% unless session[:user_id].blank? %>
   <%= render partial: "layouts/sidebar"%>
+  <% end %>
   <div id="page-content-wrapper">
-<%= yield %>
+    <%= yield %>
     </div>
   <% if pagesWithPlay.include?(@page_title) %>
   <div class="modal-footer">
@@ -79,16 +70,16 @@
     </div>
   </div>
   <% end %>
-
 </div>
 </body>
 </html>
-<script>
+<script type="text/javascript">
+  <% unless session[:user_id].blank? %>
   $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
   });
-
+  <% end %>
   <% if pagesWithPlay.include?(@page_title) %>
   var player;
   var lastTriggeredKeys = [];

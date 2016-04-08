@@ -5,9 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version -  2.2.2
 
-* System dependencies
+* System dependencies - [MIDI.js](https://github.com/mudcube/MIDI.js), [MIDI Soundfonts](https://github.com/gleitz/midi-js-soundfonts), [Bootstrap](http://getbootstrap.com/), [JQuery](https://jquery.com/)
 
 * Configuration
 
@@ -20,8 +20,6 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run

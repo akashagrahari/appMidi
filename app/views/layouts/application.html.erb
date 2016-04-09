@@ -99,7 +99,7 @@
   window.onload = function () {
     NProgress.start();
     MIDI.loadPlugin({
-      soundfontUrl: "./soundfont/",
+      soundfontUrl: " <%= asset_url('') %>",
       instrument: "acoustic_grand_piano",
       onprogress: function(state, progress) {
         console.log(state, progress);
@@ -108,7 +108,7 @@
         MIDI.setVolume(0, 127);
         player = MIDI.Player;
         player.BPM=70;
-        player.loadFile("http://localhost:3000/imagine.mid", fileProcessed(), fileProcessing(), errorFile());
+        player.loadFile("<%= root_url %>/imagine.mid", fileProcessed(), fileProcessing(), errorFile());
       }
     });
   };

@@ -10,7 +10,7 @@
   <br>
   <div class="center-block col-md-3" style="float: none">
     <%= form_for(:user, :url => {:action => 'login'}, :html => {:class => 'form-signin', :id => 'signin'}) do |f|%>
-        <%= f.text_field(:email, :max_length => 100, :placeholder => 'Email', :class => 'form-control') %>
+        <%= f.text_field(:email, :max_length => 100, :placeholder => 'Email', :class => 'form-control', :autofocus => true) %>
         <%= f.password_field(:password, :placeholder => 'Password', :class => 'form-control') %>
         <br>
         <%= submit_tag('Sign In', :class =>'btn btn-lg btn-primary btn-block') %>
@@ -22,7 +22,7 @@
   <div class="center-block col-md-3" style="float: none" id="signUpForm">
     <%= form_for(:user, :url => {:action => 'register'}, :html => {:class => 'form-signin'}) do |f|%>
         <%= f.label :name, 'Your Name' %>
-        <%= f.text_field(:first_name, :max_length => 40, :placeholder => 'First Name', :class => 'form-control', :autofocus => true) %>
+        <%= f.text_field(:first_name, :max_length => 40, :placeholder => 'First Name', :class => 'form-control') %>
         <%= f.text_field(:last_name, :max_length => 40, :placeholder => 'Last Name', :class => 'form-control') %>
         <%= f.label :name, 'Your Email Id' %>
         <%= f.text_field(:email, :max_length => 100, :placeholder => 'Email', :class => 'form-control') %>

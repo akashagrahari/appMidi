@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
+//= require player
+//= require midifile
 //= require_tree .

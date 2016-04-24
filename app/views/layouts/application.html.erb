@@ -85,7 +85,7 @@
   var lastTriggeredKeys = [];
 
   function fileProcessed(){
-    NProgress.done();
+//    NProgress.done();
   }
 
   function fileProcessing(){
@@ -97,7 +97,7 @@
   }
 
   window.onload = function () {
-    NProgress.start();
+//    NProgress.start();
     MIDI.loadPlugin({
       instrument: "acoustic_grand_piano",
       onprogress: function(state, progress) {

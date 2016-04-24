@@ -170,4 +170,34 @@
 
   <% end %>
 
+  var delay = 0; // play one note every quarter second
+  var velocity = 127; // how hard the note hits
+
+  function playNote(note){
+    MIDI.noteOn(0, note, velocity, delay);
+    MIDI.noteOff(0, note, delay + 0.75);
+  }
+
+  function addActiveWhite(id){
+    $('#'+id).addClass('white-active');
+    if(!player.playing){
+      playNote(parseInt(id));
+    }
+  }
+
+  function removeActiveWhite(id){
+    $('#'+id).removeClass('white-active');
+  }
+
+  function addActiveBlack(id){
+    $('#'+id).addClass('black-active');
+    if(!player.playing){
+      playNote(parseInt(id));
+    }
+  }
+
+  function removeActiveBlack(id){
+    $('#'+id).removeClass('black-active');
+  }
+
 </script>

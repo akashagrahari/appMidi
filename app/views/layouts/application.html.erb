@@ -99,7 +99,6 @@
   window.onload = function () {
     NProgress.start();
     MIDI.loadPlugin({
-      soundfontUrl: " <%= asset_url('') %>",
       instrument: "acoustic_grand_piano",
       onprogress: function(state, progress) {
         console.log(state, progress);

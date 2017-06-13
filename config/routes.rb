@@ -60,6 +60,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root "access#index"
+  root "home#learn"
   match ':controller(/:action(/:id(.:format)))', :via => [:get, :post]
 end

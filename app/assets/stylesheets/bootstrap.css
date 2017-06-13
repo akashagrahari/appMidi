@@ -1087,7 +1087,7 @@ body {
   font-family: "Gill Sans" ,"Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: #F7F7F7;
   background-color: #fff;
 }
 input,
@@ -3530,7 +3530,7 @@ tbody.collapse.in {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 160px;
+  min-width: 0px;
   padding: 5px 0;
   margin: 2px 0 0;
   font-size: 14px;
@@ -4492,7 +4492,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-right {
     float: right !important;
-    margin-right: -15px;
+    margin-right: 0px;
   }
   .navbar-right ~ .navbar-right {
     margin-right: 0;
@@ -4610,7 +4610,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #9d9d9d;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
+  color: #dedede;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -5130,8 +5130,8 @@ a.thumbnail.active {
   }
 }
 .progress {
-  height: 90%;
-    margin-top:0.2%;
+  height: 60%;
+    margin-top:0.6%;
     float: left;
     margin-left: 1%;
     display: inline-block;
@@ -5916,7 +5916,8 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #fff;
+  background-color: #222;
+    color: #dddddd;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid #999;

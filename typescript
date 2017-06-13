@@ -1,0 +1,255 @@
+Script started on Wed Jan  4 18:01:26 2017
+]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;32m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=script
+[J[0mSCRIPT  [Jscript[J[A[0m[27m[24m[26Cscript[K/plugin install[?1l>
+[J]2;script/plugin install]1;script/pluginzsh: no such file or directory: script/plugin
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;31m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=rrails plugin install git://github.com/thoughtbot/paper [Kcclip.git[?1l>
+]2;rails plugin install git://github.com/thoughtbot/paperclip.git]1;railsWarning: You're using Rubygems 2.0.14.1 with Spring. Upgrade to at least Rubygems 2.1.0 and run `gem pristine --all` for better startup performance.
+[31mYour Ruby version is 2.0.0, but your Gemfile specified 2.2.4[0m
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;31m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=rrvm list[?1l>
+]2;rvm list]1;rvmWarning! PATH is not properly set up, '/Users/akash.a/.rvm/gems/ruby-2.2.4/bin' is not available,
+         usually this is caused by shell initialization files - check them for 'PATH=...' entries,
+         it might also help to re-add RVM to your dotfiles: 'rvm get stable --auto-dotfiles',
+         to fix temporarily in this shell session run: 'rvm use ruby-2.2.4'.
+
+rvm rubies
+
+   [32mruby-2.2.2[0m [ x86_64 ]
+=* [32mruby-2.2.4[0m [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;32m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=rruby - -v[?1l>
+]2;ruby -v]1;rubyruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15]
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;32m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=rrvm use 2.2.4[?1l>
+]2;rvm use 2.2.4]1;rvmWarning! PATH is not properly set up, '/Users/akash.a/.rvm/gems/ruby-2.2.4/bin' is not available,
+         usually this is caused by shell initialization files - check them for 'PATH=...' entries,
+         it might also help to re-add RVM to your dotfiles: 'rvm get stable --auto-dotfiles',
+         to fix temporarily in this shell session run: 'rvm use ruby-2.2.4'.
+[32mUsing /Users/akash.a/.rvm/gems/ruby-2.2.4[0m
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;32m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=rrvm reload[?1l>
+]2;rvm reload]1;rvmRVM reloaded!
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;32m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=rvm reloaduse 2.2.4[13Dssh 10.33.101.168[17Dcd ~             [13Dssh 10.33.14.168[16Druby -v         [9Drvm list[8Druby -v [?1l>
+]2;ruby -v]1;rubyruby 2.2.4p230 (2015-12-16 revision 53155) [x86_64-darwin15]
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;32m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=ruby -vrvm reloaduse 2.2.4[13Dssh 10.33.101.168[17Dcd ~             [13Dssh 10.33.14.168[16Druby -v         [9Drvm list[8Drails plugin install git://github.com/thoughtbot/paperclip.git[K[A[18Cscript/plugin install[K[1B[K[A[47C[21Drails [P[14C git://github.com/thoughtbot/paperclip.git[K[A[18Crvm list[K[1B[K[A[34C[8Druby -v ssh 10.33.14.168[1B[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;31m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=ruby -vrvm reloaduse 2.2.4[13Dssh 10.33.101.168[17Dcd ~             [13Dssh 10.33.14.168[16Druby -v         [9Drvm list[8Drails plugin install git://github.com/thoughtbot/paperclip.git[K[?1l>
+]2;rails plugin install git://github.com/thoughtbot/paperclip.git]1;railsExpected string default value for '--rc'; got false (boolean)
+Expected string default value for '--rc'; got false (boolean)
+Usage:
+  rails plugin new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /Users/akash.a/.rvm/rubies/ruby-2.2.4/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some plugin template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the plugin with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the plugin with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+      [--dummy-path=DUMMY_PATH]                          # Create dummy application at given path
+                                                         # Default: test/dummy
+      [--full], [--no-full]                              # Generate a rails engine with bundled Rails application for testing
+      [--mountable], [--no-mountable]                    # Generate mountable isolated application
+      [--skip-gemspec], [--no-skip-gemspec]              # Skip gemspec file
+      [--skip-gemfile-entry], [--no-skip-gemfile-entry]  # If creating plugin in application's directory skip adding entry to Gemfile
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]  # Show this help message and quit
+
+Description:
+    The 'rails plugin new' command creates a skeleton for developing any
+    kind of Rails extension with ability to run tests using dummy Rails
+    application.
+
+Example:
+    rails plugin new ~/Code/Ruby/blog
+
+    This generates a skeletal Rails plugin in ~/Code/Ruby/blog.
+    See the README in the newly created plugin to get going.
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;32m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=bbunde le install[?1l>
+]2;bundle install]1;bundleUsing rake 12.0.0
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.10.1
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using rack 1.6.5
+Using mime-types-data 3.2016.0521
+Using arel 6.0.4
+Using bcrypt 3.1.11
+Using debug_inspector 0.0.2
+Using byebug 9.0.6
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using thor 0.19.4
+Using concurrent-ruby 1.0.4
+Using multi_json 1.12.1
+Using nprogress-rails 0.2.0.2
+Using pg 0.19.0
+Using puma 3.6.2
+Using bundler 1.11.2
+Using rdoc 4.3.0
+Using sass 3.4.23
+Using tilt 2.0.5
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.7.0.1
+Using rack-test 0.6.3
+Using mime-types 3.1
+Using binding_of_caller 0.7.2
+Using coffee-script 2.4.1
+Using uglifier 3.0.4
+Using sprockets 3.7.1
+Using sdoc 0.4.2
+Using turbolinks 5.0.1
+Using activesupport 4.2.5.1
+Using loofah 2.0.3
+Using mail 2.6.4
+Using rails-deprecated_sanitizer 1.0.3
+Using globalid 0.3.7
+Using activemodel 4.2.5.1
+Using jbuilder 2.6.1
+Using spring 2.0.0
+Using rails-html-sanitizer 1.0.3
+Using rails-dom-testing 1.0.8
+Using activejob 4.2.5.1
+Using activerecord 4.2.5.1
+Using actionview 4.2.5.1
+Using actionpack 4.2.5.1
+Using actionmailer 4.2.5.1
+Using railties 4.2.5.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.1.1
+Using jquery-rails 4.2.2
+Using rails 4.2.5.1
+Using sass-rails 5.0.6
+Using web-console 2.3.0
+[32mBundle complete! 15 Gemfile dependencies, 59 gems now installed.[0m
+[32mUse `bundle show [gemname]` to see where a bundled gem is installed.[0m
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;32m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=ccd vendor[1m/[0m[0m/assets[1m/[0m[0m/
+[J[1;31mjavascripts[0m/  [J[1;31mstylesheets[0m/[J[A[0m[27m[24m[26Ccd vendor/assets/[K       assets[1m/[0m[0m/
+[J[J[1;31mjavascripts[0m/  [J[1;31mstylesheets[0m/[J[A[0m[27m[24m[26Ccd vendor/assets/[Kjavascripts[1m/[0m
+[J[7mjavascripts/[0m  [J[1;31mstylesheets[0m/[J[A[0m[27m[24m[26Ccd vendor/assets/javascripts[1m/[0m[K
+[7mjavascripts/[0m  [7mjavascripts/[0m  [A[0m[27m[24m[26Ccd vendor/assets/javascripts[1m/[0m[K[12Dstyleshee[3C
+[14C[7mstylesheets/[0m[1;31mjavascripts[0m/  [A[0m[27m[24m[26Ccd vendor/assets/stylesheets[1m/[0m[K
+[J[A[55C[0m                          c  bundle install[14Drails plugin install git://github.com/thoughtbot/paperclip.git[K[?1l>
+[J]2;rails plugin install git://github.com/thoughtbot/paperclip.git]1;railsExpected string default value for '--rc'; got false (boolean)
+Expected string default value for '--rc'; got false (boolean)
+Usage:
+  rails plugin new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /Users/akash.a/.rvm/rubies/ruby-2.2.4/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some plugin template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the plugin with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the plugin with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+      [--dummy-path=DUMMY_PATH]                          # Create dummy application at given path
+                                                         # Default: test/dummy
+      [--full], [--no-full]                              # Generate a rails engine with bundled Rails application for testing
+      [--mountable], [--no-mountable]                    # Generate mountable isolated application
+      [--skip-gemspec], [--no-skip-gemspec]              # Skip gemspec file
+      [--skip-gemfile-entry], [--no-skip-gemfile-entry]  # If creating plugin in application's directory skip adding entry to Gemfile
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-help]  # Show this help message and quit
+
+Description:
+    The 'rails plugin new' command creates a skeleton for developing any
+    kind of Rails extension with ability to run tests using dummy Rails
+    application.
+
+Example:
+    rails plugin new ~/Code/Ruby/blog
+
+    This generates a skeletal Rails plugin in ~/Code/Ruby/blog.
+    See the README in the newly created plugin to get going.
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;32m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=rails plugin install git://github.com/thoughtbot/paperclip.git[K[A[79C[1B
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;31m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=rails plugin install git://github.com/thoughtbot/paperclip.git[K[A[79C[P[34Cclip.git [A[37C[P[35Clip.git [A[37C[P[36Cip.git [A[37C[P[37Cp.git [A[37C[1B
+[1m[7m%[27m[1m[0m                                                                                ]2;akash.a@Akashs-Macbook]1;..s/Dev/appMidi]7;file://Akashs-Macbook.local/Users/akash.a/Documents/Dev/appMidi[0m[27m[24m[J[01;31m➜  [36mappMidi[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=rails plugin install git://github.com/thoughtbot/paperclip.git[K[A[79C[1C[P[34Cclip.git [A[37C[P[35Clip.git [A[37C[P[36Cip.git [A[37C[P[37Cp.git [A[37C[P[38C.git [A[37C[P[39Cgit [A[37C[P[40Cit [A[37C[?1l>[1B
+]2;rails plugin git://github.com/thoughtbot/paperclip.git]1;railsExpected string default value for '--rc'; got false (boolean)
+Expected string default value for '--rc'; got false (boolean)
+Usage:
+  rails plugin new APP_PATH [options]
+
+Options:
+  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
+                                                         # Default: /Users/akash.a/.rvm/rubies/ruby-2.2.4/bin/ruby
+  -m, [--template=TEMPLATE]                              # Path to some plugin template (can be a filesystem path or URL)
+      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
+  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
+  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
+      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
+  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
+  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
+      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
+  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                                         # Default: sqlite3
+  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
+                                                         # Default: jquery
+  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
+      [--dev], [--no-dev]                                # Setup the plugin with Gemfile pointing to your Rails checkout
+      [--edge], [--no-edge]                              # Setup the plugin with Gemfile pointing to Rails repository
+      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
+  -T, [--skip-test-unit], [--no-skip-test-unit]          # Skip Test::Unit files
+      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
+      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
+      [--dummy-path=DUMMY_PATH]                          # Create dummy application at given path
+                                                         # Default: test/dummy
+      [--full], [--no-full]                              # Generate a rails engine with bundled Rails application for testing
+      [--mountable], [--no-mountable]                    # Generate mountable isolated application
+      [--skip-gemspec], [--no-skip-gemspec]              # Skip gemspec file
+      [--skip-gemfile-entry], [--no-skip-gemfile-entry]  # If creating plugin in application's directory skip adding entry to Gemfile
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Rails options:
+  -h, [--help], [--no-he

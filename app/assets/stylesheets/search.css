@@ -6,9 +6,10 @@ input {
 
 .search {
     position: relative;
-    margin: 0 auto;
-    width: 300px;
-    float: right;
+    /*margin: 1% auto;*/
+    margin-top: 1%;
+    margin-bottom: 0%;
+    /*float: right;*/
 }
 
 .search input {

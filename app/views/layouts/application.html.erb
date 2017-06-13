@@ -1,4 +1,4 @@
-<% pagesWithPlay = %w(Learn Watch Play) %>
+<% pagesWithPlay = %w(Learn Play) %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,198 +6,64 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
+<% unless session[:user_id].blank? %>
+<div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Upload a New Midi Track</h4>
+      </div>
+      <div class="modal-body">
+        <%= bootstrap_form_for(@track, url: {controller: 'home' ,action: 'submit_song'}) do |t| %>
+            <%= t.text_field :name %>
+            <%= t.text_field :artist %>
+            <%= t.text_field :genre %>
+            <%= t.file_field :midi_file, label: 'Choose Midi File', label_class: 'btn btn-default btn-file' %>
+            <%= t.submit 'Upload', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-header">
-    <a class="navbar-brand" href="/access/index">MIDI Play</a>
-    <% unless session[:user_id].blank? %>
-    <a class="navbar-brand" href="" id="menu-toggle">| | |</a>
-    <% end %>
+    <a class="navbar-brand" href="/home/learn">MIDI Play</a>
+    <a class="navbar-brand" href="" id="menu-toggle">| | |&emsp;<%= @page_title %></a>
   </div>
-  <div id="navbar" class="navbar-collapse collapse">
-    <form class="navbar-form navbar-right">
-      <% if pagesWithPlay.include?(@page_title) %>
-      <div class="form-group">
-            <select class="form-control" id="sel1">
-              <option>Acoustic Piano 61-key</option>
-              <option disabled>More instruments adding soon</option>
-            </select>
-      </div>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="navbar-li-right">
+      <% if session[:user_id].blank? %>
+          <%= link_to 'Upload A Song', {:controller => 'access', :action => 'index'} %>
+          <% else %>
+          <a href="" data-toggle="modal" data-target="#upload">Upload A Song</a>
       <% end %>
-      <% unless session[:user_id].blank? %>
-          &nbsp;
-          <%= link_to 'Logout', :controller => 'access', :action => 'logout' %>
-          &nbsp;&nbsp;
-      <% end %>
-    </form>
-  </div>
+    </li>
+  <% if session[:user_id].blank? %>
+        <li><%= link_to 'Sign In', {:controller => 'access', :action => 'index'}, :class => 'navbar-li-right' %></li>
+      <% else %>
+        <li><%= link_to 'Logout', {:controller => 'access', :action => 'logout'}, :class => 'navbar-li-right'%></li>
+  <% end %>
+    </ul>
 </nav>
 <div id="wrapper" class="toggled">
-  <% unless session[:user_id].blank? %>
-  <%= render partial: "layouts/sidebar"%>
-  <% end %>
+  <%= render partial: 'layouts/sidebar'%>
   <div id="page-content-wrapper">
     <%= yield %>
     </div>
   <% if pagesWithPlay.include?(@page_title) %>
-  <div class="modal-footer">
-    <div class="play-controls">
-      <button type="button" class="btn btn-default" aria-label="Left Align" id="play-button">
-        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-      </button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" id="pause-button">
-        <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
-      </button>
-      <button type="button" class="btn btn-default" aria-label="Left Align" id="stop-button">
-        <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
-      </button>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="seek-bar">
-      </div>
-    </div>
-    <div class="file-controls">
-      <input type="file" id="upload"/>
-      <button type="button" class="btn btn-default upload-file" aria-label="Left Align" id="uploadButton">
-        <span class="glyphicon glyphicon-open-file" aria-hidden="true"></span>
-      </button>
-      <form>
-        <div class="div-bpm">
-          <input class="form-control" placeholder="BPM" id="bpm">
-        </div>
-      </form>
-    </div>
-  </div>
+  <%= render partial: 'layouts/player' %>
   <% end %>
 </div>
 </body>
 </html>
-<script type="text/javascript">
-  <% unless session[:user_id].blank? %>
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-  });
-  <% end %>
-  <% if pagesWithPlay.include?(@page_title) %>
-  var player;
-  var lastTriggeredKeys = [];
-
-  function fileProcessed(){
-//    NProgress.done();
-  }
-
-  function fileProcessing(){
-
-  }
-
-  function errorFile(){
-
-  }
-
-  window.onload = function () {
-//    NProgress.start();
-    MIDI.loadPlugin({
-      instrument: "acoustic_grand_piano",
-      onprogress: function(state, progress) {
-        console.log(state, progress);
-      },
-      onsuccess: function() {
-        MIDI.setVolume(0, 127);
-        player = MIDI.Player;
-        player.BPM=70;
-        player.loadFile("<%= root_url %>/imagine.mid", fileProcessed(), fileProcessing(), errorFile());
-      }
-    });
-  };
-
-  function triggerKeys(notesTriggered){
-    for(var i=0; i< lastTriggeredKeys.length; i=i+1){
-      note = lastTriggeredKeys[i];
-      if($.inArray(note,notesTriggered)==-1){
-        if(note%12==1 || note%12==3 || note%12==6 || note%12==8 || note%12==10){
-          removeActiveBlack(note);
-        }
-        else{
-          removeActiveWhite(note);
-        }
-      }
-    }
-
-    for(var i=0; i< notesTriggered.length; i=i+1){
-      note = notesTriggered[i];
-      if($.inArray(note,lastTriggeredKeys)==-1){
-        if(note%12==1 || note%12==3 || note%12==6 || note%12==8 || note%12==10){
-          addActiveBlack(note);
-        }
-        else{
-          addActiveWhite(note);
-        }
-      }
-    }
-    lastTriggeredKeys=notesTriggered;
-  }
-
-  $('#play-button').click(function(){
-    player.start();
-    player.setAnimation(function(data) {
-      if(player.playing){
-      var events = data.events;
-      var notesTriggered = [];
-      for(note in events){
-        notesTriggered.push(note);
-      }
-//      console.log(notesTriggered);
-      triggerKeys(notesTriggered);
-      var now = data.now; // where we are now
-      var end = data.end; // time when song ends;
-      $('#seek-bar').width(((now/end)*100)+'%');
-      }
-    });
-  });
-
-  $('#pause-button').click(function(){
-    player.pause();
-  });
-
-  $('#stop-button').click(function(){
-    MIDI.Player.clearAnimation();
-    $('#seek-bar').width('0%');
-    player.stop();
-    triggerKeys([]);
-  });
-
-  <% end %>
-
-  var delay = 0; // play one note every quarter second
-  var velocity = 127; // how hard the note hits
-
-  function playNote(note){
-    MIDI.noteOn(0, note, velocity, delay);
-    MIDI.noteOff(0, note, delay + 0.75);
-  }
-
-  function addActiveWhite(id){
-    $('#'+id).addClass('white-active');
-    if(!player.playing){
-      playNote(parseInt(id));
-    }
-  }
-
-  function removeActiveWhite(id){
-    $('#'+id).removeClass('white-active');
-  }
-
-  function addActiveBlack(id){
-    $('#'+id).addClass('black-active');
-    if(!player.playing){
-      playNote(parseInt(id));
-    }
-  }
-
-  function removeActiveBlack(id){
-    $('#'+id).removeClass('black-active');
-  }
-
-</script>
+        <script type="text/javascript">
+          $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+          });
+        </script>

@@ -1,0 +1,121 @@
+/**
+ * Created by akash.a on 22/12/16.
+ */
+var player;
+var lastTriggeredKeys = [];
+
+function fileProcessed(){
+  console.log("Done and Done");
+//    NProgress.done();
+}
+
+function fileProcessing(){
+  console.log("Processing file");
+}
+
+function errorFile(){
+  console.log("Error!!");
+}
+
+window.onload = function () {
+//    NProgress.start();
+    MIDI.loadPlugin({
+        instrument: "acoustic_grand_piano",
+        onprogress: function(state, progress) {
+          console.log(state, progress);
+        },
+        onsuccess: function() {
+            MIDI.setVolume(0, 127);
+            player = MIDI.Player;
+            player.BPM=70;
+          console.log("<%= root_path %>");
+            player.loadFile("http://localhost:3000/imagine.mid", fileProcessed());
+        }
+    });
+};
+
+function triggerKeys(notesTriggered){
+    for(var i=0; i< lastTriggeredKeys.length; i=i+1){
+        note = lastTriggeredKeys[i];
+        if($.inArray(note,notesTriggered)==-1){
+            if(note%12==1 || note%12==3 || note%12==6 || note%12==8 || note%12==10){
+                removeActiveBlack(note);
+            }
+            else{
+                removeActiveWhite(note);
+            }
+        }
+    }
+
+    for(var i=0; i< notesTriggered.length; i=i+1){
+        note = notesTriggered[i];
+        if($.inArray(note,lastTriggeredKeys)==-1){
+            if(note%12==1 || note%12==3 || note%12==6 || note%12==8 || note%12==10){
+                addActiveBlack(note);
+            }
+            else{
+                addActiveWhite(note);
+            }
+        }
+    }
+    lastTriggeredKeys=notesTriggered;
+}
+
+//$('#play-button').click(function(){
+//    player.start();
+//    player.setAnimation(function(data) {
+//        if(player.playing){
+//            var events = data.events;
+//            var notesTriggered = [];
+//            for(note in events){
+//                notesTriggered.push(note);
+//            }
+////      console.log(notesTriggered);
+//            triggerKeys(notesTriggered);
+//            var now = data.now; // where we are now
+//            var end = data.end; // time when song ends;
+//            $('#seek-bar').width(((now/end)*100)+'%');
+//        }
+//    });
+//});
+//
+//$('#pause-button').click(function(){
+//    player.pause();
+//});
+//
+//$('#stop-button').click(function(){
+//    MIDI.Player.clearAnimation();
+//    $('#seek-bar').width('0%');
+//    player.stop();
+//    triggerKeys([]);
+//});
+
+var delay = 0; // play one note every quarter second
+var velocity = 127; // how hard the note hits
+
+function playNote(note){
+    MIDI.noteOn(0, note, velocity, delay);
+    MIDI.noteOff(0, note, delay + 0.75);
+}
+
+function addActiveWhite(id){
+    $('#'+id).addClass('white-active');
+    if(!player.playing){
+        playNote(parseInt(id));
+    }
+}
+
+function removeActiveWhite(id){
+    $('#'+id).removeClass('white-active');
+}
+
+function addActiveBlack(id){
+    $('#'+id).addClass('black-active');
+    if(!player.playing){
+        playNote(parseInt(id));
+    }
+}
+
+function removeActiveBlack(id){
+    $('#'+id).removeClass('black-active');
+}

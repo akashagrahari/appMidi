@@ -11,27 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406110720) do
+ActiveRecord::Schema.define(version: 20170105092030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "tracks", force: :cascade do |t|
-    t.integer  "user_id",                 null: false
-    t.string   "name",         limit: 40, null: false
-    t.string   "artist",       limit: 50
-    t.integer  "access_level"
-    t.string   "location",                null: false
+    t.integer  "user_id",                           null: false
+    t.string   "name",                   limit: 40, null: false
+    t.string   "artist",                 limit: 50
     t.string   "genre"
     t.integer  "views"
-    t.float    "rating"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "rating"
+    t.integer  "rating_count"
+    t.boolean  "isPublic"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "midi_file_file_name"
+    t.string   "midi_file_content_type"
+    t.integer  "midi_file_file_size"
+    t.datetime "midi_file_updated_at"
   end
 
-  add_index "tracks", ["access_level"], name: "index_tracks_on_access_level", using: :btree
   add_index "tracks", ["artist"], name: "index_tracks_on_artist", using: :btree
   add_index "tracks", ["genre"], name: "index_tracks_on_genre", using: :btree
+  add_index "tracks", ["isPublic"], name: "index_tracks_on_isPublic", using: :btree
   add_index "tracks", ["name"], name: "index_tracks_on_name", using: :btree
   add_index "tracks", ["user_id"], name: "index_tracks_on_user_id", using: :btree
   add_index "tracks", ["views"], name: "index_tracks_on_views", using: :btree

@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
-//= require player
-//= require midifile
+//= require midi/player
+//= require midi/midifile
+//= require midi/app-player.js.erb
 //= require_tree .

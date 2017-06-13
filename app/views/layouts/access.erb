@@ -1,0 +1,23 @@
+<% pagesWithPlay = %w(Learn Watch Play) %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AppMidi | <%= @page_title %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/home/learn">MIDI Play</a>
+  </div>
+</nav>
+<div id="wrapper" class="toggled">
+  <div id="page-content-wrapper">
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>
